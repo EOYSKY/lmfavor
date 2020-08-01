@@ -8,4 +8,4 @@ spring:
     password: rain8240
     username: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.99.172.232:3306/lmfavor_db?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://localhost:3306/lmfavor_db?useUnicode=true&characterEncoding=utf8
