@@ -1,6 +1,7 @@
 package cn.lmsite.lmfavor.dao;
 
 import java.util.List;
+
 import cn.lmsite.lmfavor.entity.SubtopicTitlesDO;
 
 /**
@@ -8,7 +9,7 @@ import cn.lmsite.lmfavor.entity.SubtopicTitlesDO;
  *
  * @author jonny
  */
-public interface SubtopicTitlesService{
+public interface SubtopicTitlesService {
 
     /**
      * 按主键删除

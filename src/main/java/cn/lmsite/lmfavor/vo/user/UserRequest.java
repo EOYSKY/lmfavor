@@ -24,7 +24,7 @@ public class UserRequest {
     /** 年龄 */
     private Integer age;
     /** 性别: 0-男,1-女 */
-    private Integer  gender;
+    private Integer gender;
     /** 电话号码 */
     private Long    phone;
     /** 电子邮件 */

@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
  * @author Jonny.Chang  ( https://jonnyhub.com )  @jonny6015
  */
 @Service
-public class SidebarNavSubjectsServiceImpl implements SidebarNavSubjectsService{
+public class SidebarNavSubjectsServiceImpl implements SidebarNavSubjectsService {
 
     /** 侧边栏导航对象映射器 */
     @Resource

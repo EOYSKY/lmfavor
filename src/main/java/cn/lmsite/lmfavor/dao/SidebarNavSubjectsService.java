@@ -9,7 +9,7 @@ import cn.lmsite.lmfavor.entity.SidebarNavSubjectsDO;
  *
  * @author jonny
  */
-public interface SidebarNavSubjectsService{
+public interface SidebarNavSubjectsService {
 
     /**
      * 按主键删除

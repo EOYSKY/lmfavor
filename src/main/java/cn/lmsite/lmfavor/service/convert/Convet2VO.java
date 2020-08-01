@@ -11,8 +11,8 @@ import org.apache.commons.beanutils.PropertyUtils;
  * @author Jonny.Chang  ( https://jonnyhub.com )  @jonny6015
  */
 @Slf4j
-public  class Convet2VO {
-    public static UserVO convert2UserVO(UserInfoDO userInfoDO){
+public class Convet2VO {
+    public static UserVO convert2UserVO(UserInfoDO userInfoDO) {
         UserVO userVO = new UserVO();
         try {
             PropertyUtils.copyProperties(userVO, userInfoDO);

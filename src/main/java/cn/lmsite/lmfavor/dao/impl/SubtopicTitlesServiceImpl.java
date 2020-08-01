@@ -1,11 +1,13 @@
 package cn.lmsite.lmfavor.dao.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import cn.lmsite.lmfavor.mapper.SubtopicTitlesMapper;
 import java.util.List;
-import cn.lmsite.lmfavor.entity.SubtopicTitlesDO;
+
+import javax.annotation.Resource;
+
 import cn.lmsite.lmfavor.dao.SubtopicTitlesService;
+import cn.lmsite.lmfavor.entity.SubtopicTitlesDO;
+import cn.lmsite.lmfavor.mapper.SubtopicTitlesMapper;
+import org.springframework.stereotype.Service;
 
 /**
  * 小标题标题服务impl
@@ -13,7 +15,7 @@ import cn.lmsite.lmfavor.dao.SubtopicTitlesService;
  * @author Jonny.Chang  ( https://jonnyhub.com )  @jonny6015
  */
 @Service
-public class SubtopicTitlesServiceImpl implements SubtopicTitlesService{
+public class SubtopicTitlesServiceImpl implements SubtopicTitlesService {
 
     /** 小标题标题映射器 */
     @Resource

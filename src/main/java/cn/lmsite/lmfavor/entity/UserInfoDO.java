@@ -12,6 +12,7 @@ import lombok.Data;
  */
 @Data
 public class UserInfoDO implements Serializable {
+    private static final long serialVersionUID = 1L;
     /** id */
     private Integer       id;
     /** 用户名 */
@@ -25,7 +26,7 @@ public class UserInfoDO implements Serializable {
     /** 年龄 */
     private Integer       age;
     /** 性别: 0-男,1-女 */
-    private Integer        gender;
+    private Integer       gender;
     /** 电话号码 */
     private Long          phone;
     /** 电子邮件 */
@@ -40,6 +41,4 @@ public class UserInfoDO implements Serializable {
     private LocalDateTime gmtCreate;
     /** 修改时间 */
     private LocalDateTime gmtModify;
-
-    private static final long serialVersionUID = 1L;
 }

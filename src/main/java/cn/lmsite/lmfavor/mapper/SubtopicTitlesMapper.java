@@ -1,7 +1,8 @@
 package cn.lmsite.lmfavor.mapper;
 
-import cn.lmsite.lmfavor.entity.SubtopicTitlesDO;
 import java.util.List;
+
+import cn.lmsite.lmfavor.entity.SubtopicTitlesDO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -9,6 +10,7 @@ import org.apache.ibatis.annotations.Param;
 public interface SubtopicTitlesMapper {
     /**
      * delete by primary key
+     *
      * @param id primaryKey
      * @return deleteCount
      */
@@ -16,6 +18,7 @@ public interface SubtopicTitlesMapper {
 
     /**
      * insert record to table
+     *
      * @param record the record
      * @return insert count
      */
@@ -27,6 +30,7 @@ public interface SubtopicTitlesMapper {
 
     /**
      * insert record to table selective
+     *
      * @param record the record
      * @return insert count
      */
@@ -34,6 +38,7 @@ public interface SubtopicTitlesMapper {
 
     /**
      * select by primary key
+     *
      * @param id primary key
      * @return object by primary key
      */
@@ -41,6 +46,7 @@ public interface SubtopicTitlesMapper {
 
     /**
      * update record selective
+     *
      * @param record the updated record
      * @return update count
      */
@@ -48,6 +54,7 @@ public interface SubtopicTitlesMapper {
 
     /**
      * update record
+     *
      * @param record the updated record
      * @return update count
      */

@@ -9,7 +9,7 @@ import cn.lmsite.lmfavor.entity.WebSiteInfoDO;
  *
  * @author jonny
  */
-public interface WebSiteInfoService{
+public interface WebSiteInfoService {
 
     /**
      * 按主键删除

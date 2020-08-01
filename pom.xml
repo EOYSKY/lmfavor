@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
@@ -92,6 +92,11 @@
             <artifactId>slf4j-api</artifactId>
             <version>1.7.30</version>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.23</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -124,20 +129,20 @@
                             <classpathPrefix>lib/</classpathPrefix>
                             <mainClass>cn.lmsite.lmfavor.LmfavorApplication</mainClass>
                         </manifest>
-<!--                        <manifestEntries>-->
-<!--                            <Class-Path>./</Class-Path>-->
-<!--                        </manifestEntries>-->
+                        <manifestEntries>
+                            <Class-Path>./</Class-Path>
+                        </manifestEntries>
                     </archive>
                     <!-- 过滤掉不希望包含在jar中的文件  -->
-<!--                    <excludes>-->
-                        <!--                        <exclude>*.xml</exclude>-->
-                        <!--                        <exclude>spring/**</exclude>-->
-                        <!--                        <exclude>config/**</exclude>-->
-<!--                    </excludes>-->
+                    <!--                    <excludes>-->
+                    <!--                        <exclude>*.xml</exclude>-->
+                    <!--                        <exclude>spring/**</exclude>-->
+                    <!--                        <exclude>config/**</exclude>-->
+                    <!--                    </excludes>-->
                     <!-- 添加文件到jar中的文件  -->
-<!--                    <includes>-->
-<!--                        <include></include>-->
-<!--                    </includes>-->
+                    <!--                    <includes>-->
+                    <!--                        <include></include>-->
+                    <!--                    </includes>-->
                 </configuration>
             </plugin>
             <plugin>
@@ -157,7 +162,6 @@
                 <env>dev</env>
             </properties>
             <activation>
-                <!-- 默认激活开发环境配制，使用 application-dev.properties 来替换 application.properties 文件中的 ${env} -->
                 <activeByDefault>true</activeByDefault>
             </activation>
         </profile>

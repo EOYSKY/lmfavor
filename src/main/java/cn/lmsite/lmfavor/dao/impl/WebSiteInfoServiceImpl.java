@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
  * @author Jonny.Chang  ( https://jonnyhub.com )  @jonny6015
  */
 @Service
-public class WebSiteInfoServiceImpl implements WebSiteInfoService{
+public class WebSiteInfoServiceImpl implements WebSiteInfoService {
 
     /** 网站信息映射器 */
     @Resource
