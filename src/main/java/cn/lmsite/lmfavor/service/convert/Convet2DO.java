@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 
 import cn.lmsite.lmfavor.entity.UserInfoDO;
 import cn.lmsite.lmfavor.vo.user.UserVO;
-import com.sun.media.jfxmedia.logging.Logger;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.beanutils.PropertyUtils;
 
 /**
@@ -13,13 +13,14 @@ import org.apache.commons.beanutils.PropertyUtils;
  *
  * @author Jonny.Chang  ( https://jonnyhub.com )  @jonny6015
  */
+@Slf4j
 public class Convet2DO {
     public static UserInfoDO convert2UserDO(UserVO userVO) {
         UserInfoDO userInfoDO = new UserInfoDO();
         try {
             PropertyUtils.copyProperties(userInfoDO, userVO);
         } catch (ReflectiveOperationException e) {
-            Logger.logMsg(1, "反射操作抛出的常见异常.");
+            log.info("反射操作抛出的常见异常");
         }
         if (userInfoDO.getGmtCreate() == null) {
             userInfoDO.setGmtCreate(LocalDateTime.now());

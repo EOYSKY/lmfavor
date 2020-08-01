@@ -2,7 +2,7 @@ package cn.lmsite.lmfavor.web.convert;
 
 import cn.lmsite.lmfavor.vo.user.UserRequest;
 import cn.lmsite.lmfavor.vo.user.UserVO;
-import com.sun.media.jfxmedia.logging.Logger;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.beanutils.PropertyUtils;
 
 /**
@@ -10,8 +10,8 @@ import org.apache.commons.beanutils.PropertyUtils;
  *
  * @author Jonny.Chang  ( https://jonnyhub.com )  @jonny6015
  */
+@Slf4j
 public class UserConvert {
-
     /**
      * 转换req2 View Object
      *
@@ -24,7 +24,7 @@ public class UserConvert {
         try {
             PropertyUtils.copyProperties(userVO, request);
         } catch (ReflectiveOperationException e) {
-            Logger.logMsg(1, "反射操作抛出的常见异常.");
+            log.info("反射操作抛出的常见异常");
         }
         return userVO;
     }
