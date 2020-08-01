@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.lmsite.lmfavor.mapper.WebSiteInfoMapper">
+  <resultMap id="BaseResultMap" type="cn.lmsite.lmfavor.entity.WebSiteInfoDO">
+    <!--@mbg.generated-->
+    <!--@Table lmfavor.web_site_info-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="site_name" jdbcType="VARCHAR" property="siteName" />
+    <result column="site_link" jdbcType="VARCHAR" property="siteLink" />
+    <result column="site_icon" jdbcType="VARCHAR" property="siteIcon" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modify" jdbcType="TIMESTAMP" property="gmtModify" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.lmsite.lmfavor.entity.WebSiteInfoDO">
+    <!--@mbg.generated-->
+    <!--@Table lmfavor.web_site_info-->
+    <result column="site_description" jdbcType="LONGVARCHAR" property="siteDescription" />
+    <result column="subtopic_ids" jdbcType="LONGVARCHAR" property="subtopicIds" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, user_id, site_name, site_link, site_icon, gmt_create, gmt_modify
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--@mbg.generated-->
+    site_description, subtopic_ids
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from lmfavor.web_site_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from lmfavor.web_site_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.lmsite.lmfavor.entity.WebSiteInfoDO" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into lmfavor.web_site_info (user_id, site_name, site_link, 
+      site_icon, gmt_create, gmt_modify, 
+      site_description, subtopic_ids)
+    values (#{userId,jdbcType=INTEGER}, #{siteName,jdbcType=VARCHAR}, #{siteLink,jdbcType=VARCHAR}, 
+      #{siteIcon,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModify,jdbcType=TIMESTAMP}, 
+      #{siteDescription,jdbcType=LONGVARCHAR}, #{subtopicIds,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.lmsite.lmfavor.entity.WebSiteInfoDO" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into lmfavor.web_site_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="siteName != null and siteName != ''">
+        site_name,
+      </if>
+      <if test="siteLink != null and siteLink != ''">
+        site_link,
+      </if>
+      <if test="siteIcon != null and siteIcon != ''">
+        site_icon,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModify != null">
+        gmt_modify,
+      </if>
+      <if test="siteDescription != null and siteDescription != ''">
+        site_description,
+      </if>
+      <if test="subtopicIds != null and subtopicIds != ''">
+        subtopic_ids,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="siteName != null and siteName != ''">
+        #{siteName,jdbcType=VARCHAR},
+      </if>
+      <if test="siteLink != null and siteLink != ''">
+        #{siteLink,jdbcType=VARCHAR},
+      </if>
+      <if test="siteIcon != null and siteIcon != ''">
+        #{siteIcon,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModify != null">
+        #{gmtModify,jdbcType=TIMESTAMP},
+      </if>
+      <if test="siteDescription != null and siteDescription != ''">
+        #{siteDescription,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="subtopicIds != null and subtopicIds != ''">
+        #{subtopicIds,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.lmsite.lmfavor.entity.WebSiteInfoDO">
+    <!--@mbg.generated-->
+    update lmfavor.web_site_info
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="siteName != null and siteName != ''">
+        site_name = #{siteName,jdbcType=VARCHAR},
+      </if>
+      <if test="siteLink != null and siteLink != ''">
+        site_link = #{siteLink,jdbcType=VARCHAR},
+      </if>
+      <if test="siteIcon != null and siteIcon != ''">
+        site_icon = #{siteIcon,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModify != null">
+        gmt_modify = #{gmtModify,jdbcType=TIMESTAMP},
+      </if>
+      <if test="siteDescription != null and siteDescription != ''">
+        site_description = #{siteDescription,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="subtopicIds != null and subtopicIds != ''">
+        subtopic_ids = #{subtopicIds,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.lmsite.lmfavor.entity.WebSiteInfoDO">
+    <!--@mbg.generated-->
+    update lmfavor.web_site_info
+    set user_id = #{userId,jdbcType=INTEGER},
+      site_name = #{siteName,jdbcType=VARCHAR},
+      site_link = #{siteLink,jdbcType=VARCHAR},
+      site_icon = #{siteIcon,jdbcType=VARCHAR},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modify = #{gmtModify,jdbcType=TIMESTAMP},
+      site_description = #{siteDescription,jdbcType=LONGVARCHAR},
+      subtopic_ids = #{subtopicIds,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.lmsite.lmfavor.entity.WebSiteInfoDO">
+    <!--@mbg.generated-->
+    update lmfavor.web_site_info
+    set user_id = #{userId,jdbcType=INTEGER},
+      site_name = #{siteName,jdbcType=VARCHAR},
+      site_link = #{siteLink,jdbcType=VARCHAR},
+      site_icon = #{siteIcon,jdbcType=VARCHAR},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modify = #{gmtModify,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update lmfavor.web_site_info
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=INTEGER} then #{item.userId,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="site_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=INTEGER} then #{item.siteName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="site_link = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=INTEGER} then #{item.siteLink,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="site_icon = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=INTEGER} then #{item.siteIcon,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="gmt_create = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=INTEGER} then #{item.gmtCreate,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="gmt_modify = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=INTEGER} then #{item.gmtModify,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="site_description = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=INTEGER} then #{item.siteDescription,jdbcType=LONGVARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="subtopic_ids = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=INTEGER} then #{item.subtopicIds,jdbcType=LONGVARCHAR}
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=INTEGER}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update lmfavor.web_site_info
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.userId != null">
+            when id = #{item.id,jdbcType=INTEGER} then #{item.userId,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="site_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.siteName != null">
+            when id = #{item.id,jdbcType=INTEGER} then #{item.siteName,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="site_link = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.siteLink != null">
+            when id = #{item.id,jdbcType=INTEGER} then #{item.siteLink,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="site_icon = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.siteIcon != null">
+            when id = #{item.id,jdbcType=INTEGER} then #{item.siteIcon,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="gmt_create = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.gmtCreate != null">
+            when id = #{item.id,jdbcType=INTEGER} then #{item.gmtCreate,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="gmt_modify = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.gmtModify != null">
+            when id = #{item.id,jdbcType=INTEGER} then #{item.gmtModify,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="site_description = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.siteDescription != null">
+            when id = #{item.id,jdbcType=INTEGER} then #{item.siteDescription,jdbcType=LONGVARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="subtopic_ids = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.subtopicIds != null">
+            when id = #{item.id,jdbcType=INTEGER} then #{item.subtopicIds,jdbcType=LONGVARCHAR}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=INTEGER}
+    </foreach>
+  </update>
+  <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into lmfavor.web_site_info
+    (user_id, site_name, site_link, site_icon, gmt_create, gmt_modify, site_description, 
+      subtopic_ids)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.userId,jdbcType=INTEGER}, #{item.siteName,jdbcType=VARCHAR}, #{item.siteLink,jdbcType=VARCHAR}, 
+        #{item.siteIcon,jdbcType=VARCHAR}, #{item.gmtCreate,jdbcType=TIMESTAMP}, #{item.gmtModify,jdbcType=TIMESTAMP}, 
+        #{item.siteDescription,jdbcType=LONGVARCHAR}, #{item.subtopicIds,jdbcType=LONGVARCHAR}
+        )
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" keyColumn="id" keyProperty="id" parameterType="cn.lmsite.lmfavor.entity.WebSiteInfoDO" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into lmfavor.web_site_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      user_id,
+      site_name,
+      site_link,
+      site_icon,
+      gmt_create,
+      gmt_modify,
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      #{userId,jdbcType=INTEGER},
+      #{siteName,jdbcType=VARCHAR},
+      #{siteLink,jdbcType=VARCHAR},
+      #{siteIcon,jdbcType=VARCHAR},
+      #{gmtCreate,jdbcType=TIMESTAMP},
+      #{gmtModify,jdbcType=TIMESTAMP},
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=INTEGER},
+      </if>
+      user_id = #{userId,jdbcType=INTEGER},
+      site_name = #{siteName,jdbcType=VARCHAR},
+      site_link = #{siteLink,jdbcType=VARCHAR},
+      site_icon = #{siteIcon,jdbcType=VARCHAR},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modify = #{gmtModify,jdbcType=TIMESTAMP},
+    </trim>
+  </insert>
+  <insert id="insertOrUpdateWithBLOBs" keyColumn="id" keyProperty="id" parameterType="cn.lmsite.lmfavor.entity.WebSiteInfoDO" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into lmfavor.web_site_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      user_id,
+      site_name,
+      site_link,
+      site_icon,
+      gmt_create,
+      gmt_modify,
+      site_description,
+      subtopic_ids,
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      #{userId,jdbcType=INTEGER},
+      #{siteName,jdbcType=VARCHAR},
+      #{siteLink,jdbcType=VARCHAR},
+      #{siteIcon,jdbcType=VARCHAR},
+      #{gmtCreate,jdbcType=TIMESTAMP},
+      #{gmtModify,jdbcType=TIMESTAMP},
+      #{siteDescription,jdbcType=LONGVARCHAR},
+      #{subtopicIds,jdbcType=LONGVARCHAR},
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=INTEGER},
+      </if>
+      user_id = #{userId,jdbcType=INTEGER},
+      site_name = #{siteName,jdbcType=VARCHAR},
+      site_link = #{siteLink,jdbcType=VARCHAR},
+      site_icon = #{siteIcon,jdbcType=VARCHAR},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modify = #{gmtModify,jdbcType=TIMESTAMP},
+      site_description = #{siteDescription,jdbcType=LONGVARCHAR},
+      subtopic_ids = #{subtopicIds,jdbcType=LONGVARCHAR},
+    </trim>
+  </insert>
+  <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id" parameterType="cn.lmsite.lmfavor.entity.WebSiteInfoDO" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into lmfavor.web_site_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="siteName != null">
+        site_name,
+      </if>
+      <if test="siteLink != null">
+        site_link,
+      </if>
+      <if test="siteIcon != null">
+        site_icon,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModify != null">
+        gmt_modify,
+      </if>
+      <if test="siteDescription != null">
+        site_description,
+      </if>
+      <if test="subtopicIds != null">
+        subtopic_ids,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="siteName != null">
+        #{siteName,jdbcType=VARCHAR},
+      </if>
+      <if test="siteLink != null">
+        #{siteLink,jdbcType=VARCHAR},
+      </if>
+      <if test="siteIcon != null">
+        #{siteIcon,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModify != null">
+        #{gmtModify,jdbcType=TIMESTAMP},
+      </if>
+      <if test="siteDescription != null">
+        #{siteDescription,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="subtopicIds != null">
+        #{subtopicIds,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="siteName != null">
+        site_name = #{siteName,jdbcType=VARCHAR},
+      </if>
+      <if test="siteLink != null">
+        site_link = #{siteLink,jdbcType=VARCHAR},
+      </if>
+      <if test="siteIcon != null">
+        site_icon = #{siteIcon,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModify != null">
+        gmt_modify = #{gmtModify,jdbcType=TIMESTAMP},
+      </if>
+      <if test="siteDescription != null">
+        site_description = #{siteDescription,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="subtopicIds != null">
+        subtopic_ids = #{subtopicIds,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
