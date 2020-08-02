@@ -3,7 +3,7 @@
 <mapper namespace="cn.lmsite.lmfavor.mapper.WebSiteInfoMapper">
     <resultMap id="BaseResultMap" type="cn.lmsite.lmfavor.entity.WebSiteInfoDO">
         <!--@mbg.generated-->
-        <!--@Table lmfavor.web_site_info-->
+        <!--@Table web_site_info-->
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="user_id" jdbcType="INTEGER" property="userId"/>
         <result column="site_name" jdbcType="VARCHAR" property="siteName"/>
@@ -14,7 +14,7 @@
     </resultMap>
     <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.lmsite.lmfavor.entity.WebSiteInfoDO">
         <!--@mbg.generated-->
-        <!--@Table lmfavor.web_site_info-->
+        <!--@Table web_site_info-->
         <result column="site_description" jdbcType="LONGVARCHAR" property="siteDescription"/>
         <result column="subtopic_ids" jdbcType="LONGVARCHAR" property="subtopicIds"/>
     </resultMap>
@@ -32,17 +32,17 @@
         <include refid="Base_Column_List"/>
         ,
         <include refid="Blob_Column_List"/>
-        from lmfavor.web_site_info
+        from web_site_info
         where id = #{id,jdbcType=INTEGER}
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
         <!--@mbg.generated-->
-        delete from lmfavor.web_site_info
+        delete from web_site_info
         where id = #{id,jdbcType=INTEGER}
     </delete>
     <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.lmsite.lmfavor.entity.WebSiteInfoDO" useGeneratedKeys="true">
         <!--@mbg.generated-->
-        insert into lmfavor.web_site_info (user_id, site_name, site_link,
+        insert into web_site_info (user_id, site_name, site_link,
         site_icon, gmt_create, gmt_modify,
         site_description, subtopic_ids)
         values (#{userId,jdbcType=INTEGER}, #{siteName,jdbcType=VARCHAR}, #{siteLink,jdbcType=VARCHAR},
@@ -52,7 +52,7 @@
     <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.lmsite.lmfavor.entity.WebSiteInfoDO"
             useGeneratedKeys="true">
         <!--@mbg.generated-->
-        insert into lmfavor.web_site_info
+        insert into web_site_info
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="userId != null">
                 user_id,
@@ -108,7 +108,7 @@
     </insert>
     <update id="updateByPrimaryKeySelective" parameterType="cn.lmsite.lmfavor.entity.WebSiteInfoDO">
         <!--@mbg.generated-->
-        update lmfavor.web_site_info
+        update web_site_info
         <set>
             <if test="userId != null">
                 user_id = #{userId,jdbcType=INTEGER},
@@ -139,7 +139,7 @@
     </update>
     <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.lmsite.lmfavor.entity.WebSiteInfoDO">
         <!--@mbg.generated-->
-        update lmfavor.web_site_info
+        update web_site_info
         set user_id = #{userId,jdbcType=INTEGER},
         site_name = #{siteName,jdbcType=VARCHAR},
         site_link = #{siteLink,jdbcType=VARCHAR},
@@ -152,7 +152,7 @@
     </update>
     <update id="updateByPrimaryKey" parameterType="cn.lmsite.lmfavor.entity.WebSiteInfoDO">
         <!--@mbg.generated-->
-        update lmfavor.web_site_info
+        update web_site_info
         set user_id = #{userId,jdbcType=INTEGER},
         site_name = #{siteName,jdbcType=VARCHAR},
         site_link = #{siteLink,jdbcType=VARCHAR},
@@ -163,7 +163,7 @@
     </update>
     <update id="updateBatch" parameterType="java.util.List">
         <!--@mbg.generated-->
-        update lmfavor.web_site_info
+        update web_site_info
         <trim prefix="set" suffixOverrides=",">
             <trim prefix="user_id = case" suffix="end,">
                 <foreach collection="list" index="index" item="item">
@@ -213,7 +213,7 @@
     </update>
     <update id="updateBatchSelective" parameterType="java.util.List">
         <!--@mbg.generated-->
-        update lmfavor.web_site_info
+        update web_site_info
         <trim prefix="set" suffixOverrides=",">
             <trim prefix="user_id = case" suffix="end,">
                 <foreach collection="list" index="index" item="item">
@@ -279,7 +279,7 @@
     </update>
     <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
         <!--@mbg.generated-->
-        insert into lmfavor.web_site_info
+        insert into web_site_info
         (user_id, site_name, site_link, site_icon, gmt_create, gmt_modify, site_description,
         subtopic_ids)
         values
@@ -293,7 +293,7 @@
     <insert id="insertOrUpdate" keyColumn="id" keyProperty="id" parameterType="cn.lmsite.lmfavor.entity.WebSiteInfoDO"
             useGeneratedKeys="true">
         <!--@mbg.generated-->
-        insert into lmfavor.web_site_info
+        insert into web_site_info
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
                 id,
@@ -333,7 +333,7 @@
     <insert id="insertOrUpdateWithBLOBs" keyColumn="id" keyProperty="id" parameterType="cn.lmsite.lmfavor.entity.WebSiteInfoDO"
             useGeneratedKeys="true">
         <!--@mbg.generated-->
-        insert into lmfavor.web_site_info
+        insert into web_site_info
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
                 id,
@@ -379,7 +379,7 @@
     <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id" parameterType="cn.lmsite.lmfavor.entity.WebSiteInfoDO"
             useGeneratedKeys="true">
         <!--@mbg.generated-->
-        insert into lmfavor.web_site_info
+        insert into web_site_info
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
                 id,

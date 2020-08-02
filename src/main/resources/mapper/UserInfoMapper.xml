@@ -3,7 +3,7 @@
 <mapper namespace="cn.lmsite.lmfavor.mapper.UserInfoMapper">
     <resultMap id="BaseResultMap" type="cn.lmsite.lmfavor.entity.UserInfoDO">
         <!--@mbg.generated-->
-        <!--@Table lmfavor.user_info-->
+        <!--@Table user_info-->
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="user_name" jdbcType="VARCHAR" property="userName"/>
         <result column="password" jdbcType="VARCHAR" property="password"/>
@@ -28,24 +28,24 @@
         <!--@mbg.generated-->
         select
         <include refid="Base_Column_List"/>
-        from lmfavor.user_info
+        from user_info
         where id = #{id,jdbcType=INTEGER}
     </select>
     <select id="selectByUserName" parameterType="java.lang.String" resultMap="BaseResultMap">
         <!--@mbg.generated-->
         select
         <include refid="Base_Column_List"/>
-        from lmfavor.user_info
+        from user_info
         where user_name = #{userName,jdbcType=VARCHAR}
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
         <!--@mbg.generated-->
-        delete from lmfavor.user_info
+        delete from user_info
         where id = #{id,jdbcType=INTEGER}
     </delete>
     <insert id="userRegister" keyColumn="id" keyProperty="id" parameterType="cn.lmsite.lmfavor.entity.UserInfoDO" useGeneratedKeys="true">
         <!--@mbg.generated-->
-        insert into lmfavor.user_info (user_name, `password`, nick_name,
+        insert into user_info (user_name, `password`, nick_name,
         real_name, age, gender,
         phone, email, wechat,
         address, avatar, gmt_create,
@@ -59,7 +59,7 @@
     <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.lmsite.lmfavor.entity.UserInfoDO"
             useGeneratedKeys="true">
         <!--@mbg.generated-->
-        insert into lmfavor.user_info
+        insert into user_info
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="userName != null and userName != ''">
                 user_name,
@@ -145,7 +145,7 @@
     </insert>
     <update id="updateByPrimaryKeySelective" parameterType="cn.lmsite.lmfavor.entity.UserInfoDO">
         <!--@mbg.generated-->
-        update lmfavor.user_info
+        update user_info
         <set>
             <if test="userName != null and userName != ''">
                 user_name = #{userName,jdbcType=VARCHAR},
@@ -191,7 +191,7 @@
     </update>
     <update id="updateByPrimaryKey" parameterType="cn.lmsite.lmfavor.entity.UserInfoDO">
         <!--@mbg.generated-->
-        update lmfavor.user_info
+        update user_info
         set user_name = #{userName,jdbcType=VARCHAR},
         `password` = #{password,jdbcType=VARCHAR},
         nick_name = #{nickName,jdbcType=VARCHAR},
@@ -209,7 +209,7 @@
     </update>
     <update id="updateBatch" parameterType="java.util.List">
         <!--@mbg.generated-->
-        update lmfavor.user_info
+        update user_info
         <trim prefix="set" suffixOverrides=",">
             <trim prefix="user_name = case" suffix="end,">
                 <foreach collection="list" index="index" item="item">
@@ -284,7 +284,7 @@
     </update>
     <update id="updateBatchSelective" parameterType="java.util.List">
         <!--@mbg.generated-->
-        update lmfavor.user_info
+        update user_info
         <trim prefix="set" suffixOverrides=",">
             <trim prefix="user_name = case" suffix="end,">
                 <foreach collection="list" index="index" item="item">
@@ -385,7 +385,7 @@
     </update>
     <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
         <!--@mbg.generated-->
-        insert into lmfavor.user_info
+        insert into user_info
         (user_name, `password`, nick_name, real_name, age, gender, phone, email, wechat,
         address, avatar, gmt_create, gmt_modify)
         values
@@ -399,7 +399,7 @@
     </insert>
     <insert id="insertOrUpdate" keyColumn="id" keyProperty="id" parameterType="cn.lmsite.lmfavor.entity.UserInfoDO" useGeneratedKeys="true">
         <!--@mbg.generated-->
-        insert into lmfavor.user_info
+        insert into user_info
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
                 id,
@@ -460,7 +460,7 @@
     <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id" parameterType="cn.lmsite.lmfavor.entity.UserInfoDO"
             useGeneratedKeys="true">
         <!--@mbg.generated-->
-        insert into lmfavor.user_info
+        insert into user_info
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
                 id,

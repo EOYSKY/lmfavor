@@ -79,7 +79,7 @@ public class UserServiceApi extends ApiResultEnhanced {
     }
 
     /**
-     * 用户信息更新
+     * 用户删除
      *
      * @param id 用户id
      * @return {@link BaseResult<Integer>}
