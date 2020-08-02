@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Slf4j
 @Controller
 @ResponseBody
-@RequestMapping(value = "/user")
+@RequestMapping(value = "/request/")
 public class UserServiceApi extends ApiResultEnhanced {
 
     /** 用户服务 */
@@ -37,7 +37,7 @@ public class UserServiceApi extends ApiResultEnhanced {
      * @param userRequest 用户请求
      * @return {@link BaseResult<Integer>}
      */
-    @RequestMapping(value = "register", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
+    @RequestMapping(value = "user/register", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
     public BaseResult<Integer> userRegister(@RequestBody UserRequest userRequest) {
         return buildResultForService(userService.userRegister(UserConvert.convertReq2Vo(userRequest)));
     }
@@ -48,7 +48,7 @@ public class UserServiceApi extends ApiResultEnhanced {
      * @param userRequest 用户请求
      * @return {@link BaseResult<Integer>}
      */
-    @RequestMapping(value = "login", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
+    @RequestMapping(value = "user/login", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
     public BaseResult<Boolean> userLogIn(@RequestBody UserRequest userRequest) {
         log.info("userName:{},password:{}",userRequest.getUserName(),userRequest.getPassword());
         ServiceResult<Boolean> serviceResult = userService.userLogIn(UserConvert.convertReq2Vo(userRequest));
@@ -62,7 +62,7 @@ public class UserServiceApi extends ApiResultEnhanced {
      * @param userRequest 用户请求
      * @return {@link BaseResult<Integer>}
      */
-    @RequestMapping(value = "signout", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
+    @RequestMapping(value = "user/signout", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
     public BaseResult<Boolean> userSignOut(@RequestBody UserRequest userRequest) {
         return buildResultForService(userService.userSignOut(UserConvert.convertReq2Vo(userRequest)));
     }
@@ -73,7 +73,7 @@ public class UserServiceApi extends ApiResultEnhanced {
      * @param userRequest 用户请求
      * @return {@link BaseResult<Integer>}
      */
-    @RequestMapping(value = "update", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
+    @RequestMapping(value = "user/update", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
     public BaseResult<Integer> userInfoUpdate(@RequestBody UserRequest userRequest) {
         return buildResultForService(userService.userInfoUpdate(UserConvert.convertReq2Vo(userRequest)));
     }
@@ -84,7 +84,7 @@ public class UserServiceApi extends ApiResultEnhanced {
      * @param id 用户id
      * @return {@link BaseResult<Integer>}
      */
-    @RequestMapping(value = "{id}/delete", method = RequestMethod.GET)
+    @RequestMapping(value = "user/{id}/delete", method = RequestMethod.GET)
     public BaseResult<Boolean> userInfoUpdate(@PathVariable Integer id) {
         return buildResultForService(userService.userDelete(id));
     }

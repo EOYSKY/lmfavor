@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 @ResponseBody
+@RequestMapping(value = "/request/")
 public class HelloController {
 
     /**
@@ -21,7 +22,7 @@ public class HelloController {
      *
      * @return {@link BaseResult<Integer>}
      */
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    @RequestMapping(value = "hello", method = RequestMethod.GET)
     public BaseResult<String> userRegister() {
         return new BaseResult<>(CommonResultEnum.A0000, "你好， LmFavor！接口访问成功！\n敬请使用 - @DilysLyu ");
     }
