@@ -7,6 +7,7 @@ import cn.lmsite.lmfavor.service.UserService;
 import cn.lmsite.lmfavor.vo.user.UserRequest;
 import cn.lmsite.lmfavor.web.convert.UserConvert;
 import cn.lmsite.lmfavor.web.utils.ApiResultEnhanced;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  *
  * @author Jonny.Chang  ( https://jonnyhub.com )  @jonny6015
  */
+@Slf4j
 @Controller
 @ResponseBody
 @RequestMapping(value = "/user")
@@ -48,6 +50,7 @@ public class UserServiceApi extends ApiResultEnhanced {
      */
     @RequestMapping(value = "login", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
     public BaseResult<Boolean> userLogIn(@RequestBody UserRequest userRequest) {
+        log.info("userName:{},password:{}",userRequest.getUserName(),userRequest.getPassword());
         ServiceResult<Boolean> serviceResult = userService.userLogIn(UserConvert.convertReq2Vo(userRequest));
         return serviceResult.getData() ? buildResultForService(serviceResult) :
                 new BaseResult<>(CommonResultEnum.A0120, false);
