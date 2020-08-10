@@ -53,7 +53,7 @@ public class UserServiceApi extends ApiResultEnhanced {
         log.info("userName:{},password:{}",userRequest.getUserName(),userRequest.getPassword());
         ServiceResult<Boolean> serviceResult = userService.userLogIn(UserConvert.convertReq2Vo(userRequest));
         return serviceResult.getData() ? buildResultForService(serviceResult) :
-                new BaseResult<>(CommonResultEnum.A0120, false);
+                new BaseResult<>(CommonResultEnum.PASSWORD_VERIFICATION_FAILED, false);
     }
 
     /**

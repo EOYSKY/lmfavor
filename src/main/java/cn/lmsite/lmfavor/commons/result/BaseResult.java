@@ -53,7 +53,7 @@ public class BaseResult<T> implements Serializable {
      * @param codeEnum the code enum
      */
     public BaseResult(CommonResultEnum codeEnum) {
-        this.success = codeEnum == CommonResultEnum.A0000;
+        this.success = codeEnum == CommonResultEnum.SUCCESS;
         this.resultCode = codeEnum.getCode();
         this.resultMsg = codeEnum.getMsg();
     }
@@ -66,7 +66,7 @@ public class BaseResult<T> implements Serializable {
      */
     public BaseResult(CommonResultEnum codeEnum, T data) {
         this.data = data;
-        this.success = codeEnum == CommonResultEnum.A0000;
+        this.success = codeEnum == CommonResultEnum.SUCCESS;
         this.resultCode = codeEnum.getCode();
         this.resultMsg = codeEnum.getMsg();
     }
